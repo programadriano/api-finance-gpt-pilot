@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+<body>
+<%- include('partials/_header.ejs') %>
+<main role="main" class="container mt-4">
+  <h1>Dashboard</h1>
+  <div class="performance-data">
+    <h2>Portfolio Performance</h2>
+    <p>Total Value: $<%= performanceData.totalValue %></p>
+    <p>Total Return: $<%= performanceData.totalReturn %> (<%= performanceData.annualizedReturn %>% annualized)</p>
+  </div>
+  <div class="suggestions">
+    <h2>Optimization Suggestions</h2>
+    <% suggestions.forEach(function(suggestion) { %>
+      <p><%= suggestion %></p>
+    <% }); %>
+  </div>
+</main>
+<%- include('partials/_footer.ejs') %>
+</body>
+</html>
